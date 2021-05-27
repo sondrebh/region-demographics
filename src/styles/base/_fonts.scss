@@ -1,0 +1,25 @@
+@use "utilities/constants";
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/Poppins-Light.ttf");
+    font-weight: constants.$font-weight-light;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/Poppins-Regular.ttf");
+    font-weight: constants.$font-weight-regular;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/Poppins-Medium.ttf");
+    font-weight: constants.$font-weight-medium;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/Poppins/Poppins-SemiBold.ttf");
+    font-weight: constants.$font-weight-semibold;
+}

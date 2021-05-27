@@ -1,0 +1,7 @@
+@use "utilities/constants";
+
+html, body {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: constants.$font-size-default;
+    font-weight: constants.$font-weight-regular;
+}
