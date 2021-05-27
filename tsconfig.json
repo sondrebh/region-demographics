@@ -23,6 +23,9 @@
       ],
       "@data/*": [
         "src/data/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
       ]
     },
     "target": "es5",
