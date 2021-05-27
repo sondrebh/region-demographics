@@ -2,6 +2,7 @@ import Head from "next/head"
 import type { AppProps } from "next/app";
 
 import "normalize.css";
+import "@styles/base/base.scss";
 
 function MyApp({ Component, pageProps }: AppProps)
 {
