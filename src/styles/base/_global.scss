@@ -1,6 +1,10 @@
+@use "utilities/constants";
+
 html, body {
     display: block;
     
     width: 100%;
     height: 100%;
+
+    background-color: constants.$secondary-color;
 }

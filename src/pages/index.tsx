@@ -2,6 +2,7 @@ import React from "react";
 
 import Country from "CountryTypes";
 import getAllCountriesDataAsync from "@api/getAllCountriesDataAsync";
+import RegionDemographics from "@components/RegionDemographics/RegionDemographics";
 
 interface IndexProps
 {
@@ -17,11 +18,7 @@ function Index(props: IndexProps)
 {
     const { allCountriesData } = props;
 
-    return (
-        <div>
-            {allCountriesData.map(country => <h2>{country.name}</h2>)}
-        </div>
-    );
+    return <RegionDemographics allCountriesData={allCountriesData} />;
 }
 
 export async function getStaticProps(context)
