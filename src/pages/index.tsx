@@ -1,6 +1,6 @@
 import React from "react";
 
-import Country from "CountryTypes";
+import type { Country } from "ApiModels";
 import getAllCountriesDataAsync from "@api/getAllCountriesDataAsync";
 import RegionDemographics from "@components/RegionDemographics/RegionDemographics";
 
@@ -28,7 +28,7 @@ export async function getStaticProps(context)
     };
 
     return {
-        props: indexProps
+    	props: indexProps
     };
 }
 
