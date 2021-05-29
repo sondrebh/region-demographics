@@ -11,6 +11,7 @@ import Country from "CountryTypes";
 async function getAllCountriesDataAsync(): Promise<Array<Country>>
 {
     const allCountriesDataEndpoint: string = "https://restcountries.eu/rest/v2/all";
+    
     let allCountriesData: Array<Country> = [];
 
     try {
