@@ -23,9 +23,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 The design is located here: [Figma](https://www.figma.com/file/rFJ22POY0hT1PsySBiFSyM/RegionDemographics?node-id=0%3A1) and holds information about the structure of this simple web app.
 
 ## Flow of the app
-1. index.tsx page uses static generation to get the data from the api on every build. It then passes this data to the <RegionDemographics /> component which is the top component of this app.
+1. index.tsx page uses static generation to get the data from the api on every build. It then passes this data to the RegionDemographics component which is the top component of this app.
 2. RegionDemographics sets up the global state context and sets the selected region before anything else. It then renders every component.
-3. The sorting happens in the <CountriesList /> component. 
+3. The sorting happens in the CountriesList component. 
 
 ## Todo
 1. Complete the <LanguagesList /> component.
