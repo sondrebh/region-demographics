@@ -11,8 +11,8 @@ import {
 export default class SortOptions implements SortOptionsModel
 {
 	dataPropertyName: string = null;
-	sortDirection: SortDirection = SortDirection.Ascending;
-	sortMode: SortMode = SortMode.Auto;
+	sortDirection: SortDirection = "Ascending";
+	sortMode: SortMode = "Auto";
 
 	constructor(
 		dataPropertyName?: string,

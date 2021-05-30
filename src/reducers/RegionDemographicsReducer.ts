@@ -20,10 +20,28 @@ function RegionDemographicsReducer(currentState: StateModel, action: Action): St
 {
     switch (action.Type)
 	{
-        case ActionTypes.SetSelectedRegion:
+        case "SetSelectedRegion":
 		{
-            const newState = setSelectedRegion(currentState, action.Data);
-			return newState;
+			return {
+				...currentState,
+				selectedRegion: action.Data
+			};
+        }
+
+		case "SetSelectedListType":
+		{
+			return {
+				...currentState,
+				selectedListType: action.Data
+			};
+        }
+
+		case "SetActiveSortOptions":
+		{
+			return {
+				...currentState,
+				sortOptions: action.Data
+			};
         }
 
         default:
@@ -31,16 +49,6 @@ function RegionDemographicsReducer(currentState: StateModel, action: Action): St
             return currentState;
         }
     }
-}
-
-function setSelectedRegion(currentState: StateModel, newRegion: string): StateModel
-{
-	const newState: StateModel = {
-		...currentState,
-		selectedRegion: newRegion
-	};
-
-	return newState;
 }
 
 export default RegionDemographicsReducer;
