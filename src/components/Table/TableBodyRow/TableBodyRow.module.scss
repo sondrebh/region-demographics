@@ -1,0 +1,23 @@
+@use "utilities/constants";
+
+.main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	background: constants.$text-color-light;
+
+	margin-top: 1.4rem;
+
+	&:first-of-type {
+		margin-top: 2.2rem;
+	}
+
+	padding: 1.4rem;
+	border-radius: 0.8rem;
+	
+	& * {
+		color: constants.$text-color-dark;
+		font-size: constants.$font-size-normal;
+		font-weight: constants.$font-weight-regular;
+	}
+}

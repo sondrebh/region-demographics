@@ -1,6 +1,6 @@
-import React, { useReducer  } from "react";
+import React, { useReducer, useEffect } from "react";
 
-import type { Country } from "ApiModels";
+import type { Country, Regions } from "ApiModels";
 import RegionDemographicsContext from "@contexts/RegionDemographicsContext";
 import RegionDemographicsReducer from "@reducers/RegionDemographicsReducer";
 import RegionDemographicsState from "@data/state/RegionDemographicsState";
@@ -24,6 +24,19 @@ function RegionDemographics(props: RegionDemographicsProps)
 		dispatch
 	] = useReducer(RegionDemographicsReducer, new RegionDemographicsState());
 
+	useEffect(() => {
+		const selectedRegionIsNotSet = (state.selectedRegion === null);
+
+		if(selectedRegionIsNotSet) {
+			const firstRegionInList = allCountriesData[0].region;
+		
+			dispatch({
+				type: "SetSelectedRegion",
+				data: firstRegionInList as Regions
+			});
+		}
+	}, []);
+
     return (
         <main className={styles.main}>
             <RegionDemographicsContext.Provider value={{state, dispatch}}>
@@ -32,9 +45,9 @@ function RegionDemographics(props: RegionDemographicsProps)
 				<ListSelector />
 
 				{(state.selectedList === "CountriesList") ? (
-					<CountriesList />
+					<CountriesList allCountriesData={allCountriesData} />
 				) : (
-					<LanguagesList />
+					<LanguagesList allCountriesData={allCountriesData} />
 				)}
 			</RegionDemographicsContext.Provider>
         </main>

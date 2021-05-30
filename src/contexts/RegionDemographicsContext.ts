@@ -1,5 +1,10 @@
-import React from "react";
+import { createContext } from "react";
+import { RegionDemographicsContextModel } from "StateModels";
 
-const RegionDemographicsContext = React.createContext({});
+const context: RegionDemographicsContextModel = {
+	state: null,
+	dispatch: null
+};
+const RegionDemographicsContext = createContext(context);
 
 export default RegionDemographicsContext;

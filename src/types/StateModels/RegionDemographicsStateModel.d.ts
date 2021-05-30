@@ -5,7 +5,7 @@ declare module "StateModels"
 	
 	export interface RegionDemographicsStateModel
 	{
-		selectedRegion: string,
+		selectedRegion: Regions,
 		selectedList: Lists,
 		sortOptions: SortOptionsModel,
 	}

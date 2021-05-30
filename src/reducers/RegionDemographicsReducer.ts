@@ -1,11 +1,14 @@
-import {
+import type {
 	RegionDemographicsStateModel as StateModel
 } from "StateModels";
 
-import {
-	RegionDemographicsReducerAction as Action,
-	RegionDemographicsReducerActionTypes as ActionTypes
+import type {
+	RegionDemographicsReducerAction as Action
 } from "ReducersActions";
+
+import type { Regions } from "ApiModels";
+import type { Lists } from "Lists";
+import type { SortOptionsModel } from "Sorting";
 
 /**
  * @param currentState Represents the current state object before 
@@ -18,13 +21,13 @@ import {
  */
 function RegionDemographicsReducer(currentState: StateModel, action: Action): StateModel
 {
-    switch (action.Type)
+    switch (action.type)
 	{
         case "SetSelectedRegion":
 		{
 			return {
 				...currentState,
-				selectedRegion: action.Data
+				selectedRegion: action.data as Regions
 			};
         }
 
@@ -32,7 +35,7 @@ function RegionDemographicsReducer(currentState: StateModel, action: Action): St
 		{
 			return {
 				...currentState,
-				selectedListType: action.Data
+				selectedList: action.data as Lists
 			};
         }
 
@@ -40,7 +43,7 @@ function RegionDemographicsReducer(currentState: StateModel, action: Action): St
 		{
 			return {
 				...currentState,
-				sortOptions: action.Data
+				sortOptions: action.data as SortOptionsModel
 			};
         }
 

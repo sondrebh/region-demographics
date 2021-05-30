@@ -1,0 +1,35 @@
+@use "utilities/constants";
+
+.main {
+	& button {
+		display: flex;
+		align-content: center;
+
+		background: none;
+		border: none;
+
+		& svg {
+			margin-left: 0.6rem;
+
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+
+			& svg {
+				opacity: 1;
+				transition: opacity 0.2s;
+			}
+		}
+	}
+
+	.iconVisible {
+		& svg {
+			opacity: 1;
+			transition: opacity 0.2s;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+@use "utilities/constants";
+
+.main {
+	display: block;
+	margin-top: 6rem;
+}
+
+.buttonContainers {
+	max-width: fit-content;
+
+	& > button {
+		background: none;
+		border: none;
+
+		font-size: constants.$font-size-medium;
+
+		padding: 0;
+		padding-bottom: 1rem;
+
+		margin-right: 2.5rem;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			cursor: pointer;
+			color: constants.$primary-color;
+		}
+	}
+
+	.buttonActive {
+		color: constants.$primary-color;
+		font-weight: constants.$font-weight-semibold;
+		border-bottom: 2px solid constants.$primary-color;
+	}
+}
+
+.buttonsLine {
+	margin-top: -2px;
+	border: none;
+	height: 2px;
+	background: constants.$inactive-color;
+}

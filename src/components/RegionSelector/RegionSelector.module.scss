@@ -1,0 +1,77 @@
+@use "utilities/constants";
+
+.selectorContainer {
+	position: relative;
+}
+
+.regionDropdownButton {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	padding: 1.6rem;
+
+	min-width: 25rem;
+
+	font-size: constants.$font-size-large;
+
+	background: none;
+	border: 2px solid constants.$primary-color;
+	border-radius: 0.8rem;
+
+	&:hover {
+		cursor: pointer;
+		border: 2px solid constants.$primary-color-hover;
+	}
+}
+
+.chevronUp {
+	transform: rotateX(180deg);
+	transition: transform 0.2s;
+}
+
+.chevronDown {
+	transition: transform 0.2s;
+}
+
+.selectionList {
+	position: absolute;
+
+	width: 100%;
+	max-width: 25rem;
+
+	margin-top: 1rem;
+
+	background: constants.$text-color-light;
+
+	border: 2px solid constants.$primary-color;
+	border-radius: 0.8rem;
+
+	& > button {
+		display: block;
+		width: 100%;
+		text-align: left;
+
+		padding: 1.6rem;
+
+		font-size: constants.$font-size-medium;
+
+		background: none;
+		border: none;
+
+		&:hover {
+			cursor: pointer;
+			background: constants.$secondary-color;
+		}
+	}
+
+	& > button:first-of-type {
+		border-top-left-radius: 0.8rem;
+		border-top-right-radius: 0.8rem;
+	}
+
+	& > button:last-of-type {
+		border-bottom-left-radius: 0.8rem;
+		border-bottom-right-radius: 0.8rem;
+	}
+}
