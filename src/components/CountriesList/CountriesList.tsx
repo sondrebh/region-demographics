@@ -24,11 +24,16 @@ interface CountriesListProps
 
 function CountriesList({ allCountriesData }: CountriesListProps)
 {
+	function getAllCountriesData(): Array<Country>
+	{
+		return [ ...allCountriesData ];
+	}
+
 	const { state } = useContext(RegionDemographicsContext);
 	const [sortedAllCountriesData, setSortedAllCountriesData] = useState(allCountriesData);
 
 	useEffect(() => {
-		const sortedCountriesData = getSortedCountriesData(state.sortOptions, allCountriesData);
+		const sortedCountriesData = getSortedCountriesData(state.sortOptions, getAllCountriesData());
 		setSortedAllCountriesData([ ...sortedCountriesData ]);
 	}, [state.sortOptions, allCountriesData]);
 
@@ -37,22 +42,22 @@ function CountriesList({ allCountriesData }: CountriesListProps)
 			<Statistics>
 				<StatisticsEntry
 					title={`Countries in ${state.selectedRegion}`}
-					value={getCountriesCount(state.selectedRegion, allCountriesData)}
+					value={getCountriesCount(state.selectedRegion, getAllCountriesData())}
 				/>
 
 				<StatisticsEntry
 					title={"Population average"}
-					value={`${getPopulationAverage(state.selectedRegion, allCountriesData)} Million`}
+					value={`${getPopulationAverage(state.selectedRegion, getAllCountriesData())} Million`}
 				/>
 
 				<StatisticsEntry
 					title={"Smallest country in area"}
-					value={getSmallestAreaCountry(state.selectedRegion, allCountriesData)}
+					value={getSmallestAreaCountry(state.selectedRegion, getAllCountriesData())}
 				/>
 
 				<StatisticsEntry
 					title={"Largest country in area"}
-					value={getLargestAreaCountry(state.selectedRegion, allCountriesData)}
+					value={getLargestAreaCountry(state.selectedRegion, getAllCountriesData())}
 				/>
 			</Statistics>
 
@@ -173,10 +178,12 @@ function getPopulationAverage(selectedRegion: Regions, allCountriesData: Array<C
 
 function getSmallestAreaCountry(selectedRegion: Regions, allCountriesData: Array<Country>): string
 {
-	const countriesInRegionSortedByArea
+	const countriesInRegion
 		= allCountriesData
-			.filter(country => country.region === selectedRegion)
-			.sort((countryA, countryB) => countryA.area - countryB.area);
+			.filter(country => country.region === selectedRegion);
+	
+	const countriesInRegionSortedByArea
+		= getSortedAscending("area", countriesInRegion);
 
 	const smallestCountryByArea = countriesInRegionSortedByArea[0];
 
