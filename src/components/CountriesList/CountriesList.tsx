@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import type { Country, Regions } from "ApiModels";
+import type { SortOptionsModel } from "Sorting";
 import RegionDemographicsContext from "@contexts/RegionDemographicsContext";
 
 import Statistics from "@components/Statistics/Statistics";
@@ -15,7 +16,6 @@ import TableBodyRow from "@components/Table/TableBodyRow/TableBodyRow";
 import TableBodyColumn from "@components/Table/TableBodyColumn/TableBodyColumn";
 
 import styles from "./CountriesList.module.scss";
-import { SortOptionsModel } from "Sorting";
 
 interface CountriesListProps
 {

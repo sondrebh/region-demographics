@@ -39,7 +39,7 @@ function RegionDemographics(props: RegionDemographicsProps)
 
     return (
         <main className={styles.main}>
-            <RegionDemographicsContext.Provider value={{state, dispatch}}>
+            <RegionDemographicsContext.Provider value={{ state, dispatch }}>
 				<RegionSelector allCountriesData={allCountriesData} />
 
 				<ListSelector />
