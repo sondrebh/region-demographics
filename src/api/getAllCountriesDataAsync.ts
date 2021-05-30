@@ -1,4 +1,4 @@
-import { Country } from "ApiModels";
+import type { Country } from "ApiModels";
 
 /**
  * Fetches fresh data from the restcountries API and
