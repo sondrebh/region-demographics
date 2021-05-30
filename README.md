@@ -28,7 +28,7 @@ The design is located here: [Figma](https://www.figma.com/file/rFJ22POY0hT1PsySB
 3. The sorting happens in the CountriesList component. 
 
 ## Todo
-1. Complete the <LanguagesList /> component.
+1. Complete the LanguagesList component.
 2. Abstract sorting out from the list components and into the reducer.
 3. Add null, undefined and error handling.
 3. Check and refactor semantics.
